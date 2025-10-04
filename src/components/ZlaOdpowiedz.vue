@@ -26,6 +26,11 @@
     text-align: center;
 }
 
+.container-zla-odpowiedz:focus{
+    outline: 5px solid black;
+    outline-offset: 10px;
+}
+
 .brawo{
     font-size: 60px;
     margin-top: 0px;

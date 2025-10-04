@@ -2,20 +2,20 @@
 import { useMainCompStore } from '../stores/mainCompStore';
 
 
-  const storeMainComp = useMainCompStore();
-  
+const storeMainComp = useMainCompStore();
 
-  function GrajJeszczeRaz(){
-    storeMainComp.ifWinSilver=false
-    storeMainComp.ifMain1=true
-  
-  }
 
-  function GrajDalej(){
-    storeMainComp.ifWinSilver=false
-    storeMainComp.ifMain1=false
-    storeMainComp.ifMain2=true
-  }
+function GrajJeszczeRaz() {
+    storeMainComp.ifWinSilver = false
+    storeMainComp.ifMain1 = true
+
+}
+
+function GrajDalej() {
+    storeMainComp.ifWinSilver = false
+    storeMainComp.ifMain1 = false
+    storeMainComp.ifMain2 = true
+}
 
 </script>
 
@@ -25,9 +25,11 @@ import { useMainCompStore } from '../stores/mainCompStore';
             <div class="circle">
                 <img class="ikona" src="../assets/puchar_silver.png" width="191px" height="227px" />
             </div>
-            <p class="brawo">Brawo! Nagroda – srebrny puchar.</p>
-            <p class="text">Poziom łatwy - ukończony!.</p>
-            <p class="text">Przejdź do następnego poziomu.</p>
+            <div class="text-container" tabindex="0">
+                <p class="brawo">Brawo! Nagroda – srebrny puchar.</p>
+                <p class="text">Poziom łatwy - ukończony!.</p>
+                <p class="text">Przejdź do następnego poziomu.</p>
+            </div>
             <div class="button-row">
                 <button class="my-button button-win" @click="GrajJeszczeRaz">
                     Zagraj jeszcze raz
@@ -79,6 +81,16 @@ import { useMainCompStore } from '../stores/mainCompStore';
 
 }
 
+.text-container {
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
+.text-container:focus {
+    outline: 3px solid black;
+    outline-offset: 5px;
+}
+
 .brawo {
     font-size: 64px;
     margin-top: 32px;
@@ -116,5 +128,10 @@ import { useMainCompStore } from '../stores/mainCompStore';
     background-color: #093343;
     color: white;
     position: relative;
+}
+
+.button-win:focus {
+    outline: 5px solid black;
+    outline-offset: 10px;
 }
 </style>

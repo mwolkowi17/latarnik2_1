@@ -1,6 +1,6 @@
 <script setup lang="ts">
 //import { useSceneStore } from '../stores/sceneStore';
-import {useMainCompStore} from '../stores/mainCompStore'
+import { useMainCompStore } from '../stores/mainCompStore'
 // import { useKolaStore } from '../stores/storeKola';
 
 //const storeSceneMain = useSceneStore();
@@ -8,22 +8,9 @@ const storeMainComp = useMainCompStore();
 // const storeKola = useKolaStore();
 
 
-async function jeszczeRaz(){
-    storeMainComp.ifPrzegranaSilver=false
-   
-    // storeKola.ifWymien=true
-    // storeKola.ifFifty=true
-    // storeKola.ifSeventy=true
-    // storeTime.isPaused = false
-    // await nextTick()
-    // storeScene.licznikPunktacja=0
-    // await nextTick()
-    // storeScene.ramkaPunktacjaWysokosc = pointsPosition.pozycjaRamki[0]
-    // await nextTick()
-    // storeScene.nrKolejki=0
-    // console.log(storeTime.isPaused)
-    // await nextTick()
-    storeMainComp.ifMain1=true
+async function jeszczeRaz() {
+    storeMainComp.ifPrzegranaSilver = false
+    storeMainComp.ifMain1 = true
 }
 
 </script>
@@ -34,16 +21,15 @@ async function jeszczeRaz(){
             <div class="circle">
                 <div class="przekontna przekontna-a"></div>
                 <div class="przekontna przekontna-b"></div>
-            </div>
-            <p class="brawo">Przegrana.</p>
-           
-            <div class="button-row">
-                <button class="my-button button-win" @click="jeszczeRaz">
-                    <p class="button-text">Zagraj jeszcze raz</p>
-                    <p class="button-text">-zacznij od poziomu łatwego</p>
-                </button>
-              
-            </div>
+            </div>          
+                <p class="brawo" tabindex="0">Przegrana.</p>
+
+                <div class="button-row">
+                    <button class="my-button button-win" @click="jeszczeRaz">
+                        <p class="button-text">Zagraj jeszcze raz</p>
+                        <p class="button-text">-zacznij od poziomu łatwego</p>
+                    </button>
+                </div>
         </div>
     </div>
 </template>
@@ -69,22 +55,22 @@ async function jeszczeRaz(){
     left: 555px;
 }
 
-.przekontna{
+.przekontna {
     width: 230px;
     height: 15px;
     background-color: #F48506;
-    position:absolute;
-    top:140px;
-    left:27px;
-    
+    position: absolute;
+    top: 140px;
+    left: 27px;
+
 }
 
-.przekontna-a{
-transform: rotate(45deg); 
+.przekontna-a {
+    transform: rotate(45deg);
 }
 
-.przekontna-b{
-    transform: rotate(135deg); 
+.przekontna-b {
+    transform: rotate(135deg);
 }
 
 .container-fail-silver {
@@ -109,6 +95,13 @@ transform: rotate(45deg);
     font-size: 64px;
     margin-top: 32px;
     margin-bottom: 0px;
+    margin-left: 290px;
+    margin-right: 290px;
+}
+
+.brawo:focus{
+    outline: 3px solid black;
+    outline-offset: 5px;
 }
 
 .text {
@@ -144,7 +137,12 @@ transform: rotate(45deg);
     position: absolute;
 }
 
-.button-text{
+.button-win:focus{
+    outline: 5px solid black;
+    outline-offset: 10px;
+}
+
+.button-text {
     margin-top: 0px;
     margin-bottom: 0px;
 }

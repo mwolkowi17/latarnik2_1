@@ -3,7 +3,7 @@
 </script>
 
 <template>
-<div class="container-prawidlowa-odpowiedz">
+<div class="container-prawidlowa-odpowiedz" tabindex="0">
     <img class="ikona" src="../assets/dobra_odp.png" width="97px" height="93px"/>
     <p class="brawo">Brawo!</p>
     <p class="text">Prawidłowa odpowiedź.</p>
@@ -24,6 +24,11 @@
     font-family: "Proxima Nova", sans-serif;
     text-align: center;
     
+}
+
+.container-prawidlowa-odpowiedz:focus{
+    outline: 5px solid black;
+  outline-offset: 10px;
 }
 
 .brawo{

@@ -25,7 +25,7 @@ function jeszczeRaz(){
                 <div class="przekontna przekontna-a"></div>
                 <div class="przekontna przekontna-b"></div>
             </div>
-            <p class="brawo">Przegrana.</p>
+            <p class="brawo" tabindex="0">Przegrana.</p>
            
             <div class="button-row">
                 <button class="button-win my-button" @click="jeszczeRaz">

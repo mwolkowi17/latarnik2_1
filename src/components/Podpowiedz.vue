@@ -6,11 +6,11 @@ const storeSceneMain = useScene2Store();
 </script>
 
 <template>
-<div class="container-podpowiedz">{{storeSceneMain.podpowiedzTresc}}</div>
+    <div class="container-podpowiedz">{{ storeSceneMain.podpowiedzTresc }}</div>
 </template>
 
 <style scoped>
-.container-podpowiedz{
+.container-podpowiedz {
     width: 700px;
     height: 125px;
     border-radius: 39px;
@@ -23,5 +23,10 @@ const storeSceneMain = useScene2Store();
     font-family: "Proxima Nova", sans-serif;
     display: grid;
     place-content: center
+}
+
+.container-podpowiedz {
+    outline: 5px solid black;
+    outline-offset: 10px;
 }
 </style>

@@ -98,18 +98,24 @@ function PlayTimer() {
             </div>
         </div> -->
         <div class="kola-elementy " v-if="storeKola.ifWymien">
-            <div class="elipsa elipsa-wymien my-button" @click="KoloWymien">
-                <img src="../assets/wymien.png" alt="wymien pytanie" width="60px" height="100px" />
+            <div class="elipsa elipsa-wymien my-button" @click="KoloWymien" tabindex="0">
+                <p>
+                    <img src="../assets/wymien.png" alt="wymien pytanie" width="60px" height="100px" />
+                </p>
             </div>
         </div>
         <div class="kola-elementy" v-if="storeKola.ifSeventy">
-            <div class="elipsa elipsa-seven my-button" @click="KoloSeventy">
-                75:100
+            <div class="elipsa elipsa-seven my-button" @click="KoloSeventy" tabindex="0">
+                <p>
+                    75:100
+                </p>
             </div>
         </div>
-        <div class="kola-elementy" v-if="storeKola.ifFifty" @click="KoloFifty">
-            <div class="elipsa elipsa-fifty my-button">
-                50:50
+        <div class="kola-elementy" v-if="storeKola.ifFifty">
+            <div class="elipsa elipsa-fifty my-button" @click="KoloFifty" tabindex="0">
+                <p>
+                    50:50
+                </p>
             </div>
         </div>
         <img class="glosnik" src="../assets/glosnik.png" alt="glosnik" width="84px" height="74px" />
@@ -118,7 +124,7 @@ function PlayTimer() {
         <PrawidlowaOdpowiedz class="component-prawidlowa-odpowiedz" v-if="storeSceneMain.ifPrawidlowaOdpowiedz" />
         <ZlaOdpowiedz class="component-zla-odpowiedz" v-if="storeSceneMain.ifZlaOdpowiedz" />
 
-        <div class="container-pytanie">{{ storeSceneMain.pytanie }}</div>
+        <div class="container-pytanie" tabindex="0">{{ storeSceneMain.pytanie }}</div>
         <button class="button-odpowiedz my-button"
             :style="{ top: storeSceneMain.odpowiedz1Polozenie[0], left: storeSceneMain.odpowiedz1Polozenie[1] }"
             v-if="storeSceneMain.ifOdpowiedz1" @click="odpowiedz1Click">
@@ -141,8 +147,8 @@ function PlayTimer() {
         </button>
 
         <div class="container-punktacja">
-            <div class="ramka-punktacja" :style="{ top: storeSceneMain.ramkaPunktacjaWysokosc + 'px' }"></div>
-            <div class="licznik-czasu">
+            <div class="ramka-punktacja" :style="{ top: storeSceneMain.ramkaPunktacjaWysokosc + 'px' }" tabindex="0"></div>
+            <div class="licznik-czasu" tabindex="0">
                 <p class="licznik-display">
                     {{ storeTime.formattedTime }}
                 </p>
@@ -244,6 +250,11 @@ function PlayTimer() {
     left: 19px;
 }
 
+.button-zagraj-jeszcze:focus {
+    outline: 5px solid black;
+    outline-offset: 10px;
+}
+
 .kola-elementy {
     display: inline-block;
     position: relative;
@@ -258,9 +269,16 @@ function PlayTimer() {
     background-size: 158px 118px;
     background-repeat: no-repeat;
     margin-left: 25px;
-    padding-top: 36px;
-    margin-bottom: -20px;
+    /*padding-top: 36px; 
+    margin-bottom: -20px;*/
 
+
+}
+
+.elipsa:focus {
+    outline: 3px solid black;
+    outline-offset: 10px;
+    /* border-radius: 160px; */
 }
 
 .elipsa-podpowiedz {
@@ -272,8 +290,8 @@ function PlayTimer() {
 }
 
 .elipsa-wymien {
-    padding-top: 15px !important;
-    margin-bottom: -0px !important;
+    /* padding-top: 15px !important;
+    margin-bottom: -0px !important; */
     position: absolute;
     top: 17px;
     left: 763px
@@ -344,6 +362,11 @@ function PlayTimer() {
     place-content: center
 }
 
+.container-pytanie:focus {
+    outline: 5px solid black;
+    outline-offset: 3px;
+}
+
 .button-odpowiedz {
     position: absolute;
     text-align: center;
@@ -358,6 +381,11 @@ function PlayTimer() {
     border-radius: 39px;
     background-color: #D7E2F1;
     border: 5px solid #1D5488;
+}
+
+.button-odpowiedz:focus {
+    outline: 5px solid black;
+    outline-offset: 3px;
 }
 
 .container-punktacja {
@@ -389,6 +417,11 @@ function PlayTimer() {
     left: 27px
 }
 
+.licznik-czasu:focus {
+    outline: 5px solid black;
+    outline-offset: 10px;
+}
+
 .licznik-display {
     position: absolute;
     left: 45px;
@@ -411,6 +444,11 @@ function PlayTimer() {
     border: 2px solid #FFFFFF
 }
 
+.button-pauza:focus {
+    outline: 5px solid black;
+    outline-offset: 10px;
+}
+
 .button-kontynuj {
     color: white;
     background-color: #093343;
@@ -425,6 +463,11 @@ function PlayTimer() {
     left: 313px;
     top: 107px;
     border: 2px solid #FFFFFF
+}
+
+.button-kontynuj:focus {
+    outline: 5px solid black;
+    outline-offset: 10px;
 }
 
 .container-points {
@@ -474,5 +517,10 @@ function PlayTimer() {
     height: 70px;
     /* top: 990px; */
     left: 15px;
+}
+
+.ramka-punktacja:focus {
+    outline: 5px solid black;
+    outline-offset: 10px;
 }
 </style>

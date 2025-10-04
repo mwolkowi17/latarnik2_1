@@ -33,9 +33,11 @@ import { useTimerStore } from '../stores/timerStore';
             <div class="circle">
                 <img class="ikona" src="../assets/puchar_gold.png" width="191px" height="227px" />
             </div>
+            <div class="text-container" tabindex="0">
             <p class="brawo">Gratulacje!</p>
             <p class="text text-nagroda">Nagroda – złoty puchar.</p>
             <p class="text">Poziom trudny - ukończony!</p>
+            </div>
             <div class="button-row">
                 <button class="my-button button-win" @click="ZagrajJeszcze">
                     Zagraj jeszcze raz
@@ -87,6 +89,16 @@ import { useTimerStore } from '../stores/timerStore';
 
 }
 
+.text-container {
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
+.text-container:focus {
+    outline: 3px solid black;
+    outline-offset: 5px;
+}
+
 .brawo {
     font-size: 64px;
     margin-top: 32px;
@@ -128,5 +140,10 @@ import { useTimerStore } from '../stores/timerStore';
     background-color: #093343;
     color: white;
     position: relative;
+}
+
+.button-win:focus {
+    outline: 5px solid black;
+    outline-offset: 10px;
 }
 </style>
